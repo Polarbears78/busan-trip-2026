@@ -42,9 +42,16 @@
     .hero-gradient {
       background: linear-gradient(135deg, #0f172a 0%, #0369a1 50%, #0ea5e9 100%);
     }
+    @keyframes pulse-subtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2.5s infinite ease-in-out;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased relative">
 
   <!-- Header / Hero Section -->
   <header class="hero-gradient text-white shadow-xl relative overflow-hidden">
@@ -52,8 +59,14 @@
     <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12 relative z-10">
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/30 text-sky-200 text-xs font-semibold backdrop-blur-sm border border-sky-400/20 mb-2">
-            <i class="fa-solid fa-graduation-cap"></i> 2026학년도 2학년 테마학습여행
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/30 text-sky-200 text-xs font-semibold backdrop-blur-sm border border-sky-400/20">
+              <i class="fa-solid fa-graduation-cap"></i> 2026학년도 2학년 테마학습여행
+            </span>
+            <!-- Padlet Header Button -->
+            <a href="https://padlet.com/ecokimt/2026-2-p4yy42g22uktlvz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white text-xs font-bold shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 border border-pink-300/30">
+              <i class="fa-solid fa-camera"></i> 사진 올리기 (패들렛) <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+            </a>
           </div>
           <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
             육민관중학교 부산 수학여행 웹 가이드
@@ -101,7 +114,30 @@
   </header>
 
   <!-- Main Content Container -->
-  <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-6">
+
+    <!-- Padlet Live Photo Banner -->
+    <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 text-white rounded-3xl p-5 sm:p-6 shadow-md flex flex-wrap items-center justify-between gap-4 border border-rose-300/30">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl shrink-0">
+          <i class="fa-solid fa-camera-retro"></i>
+        </div>
+        <div>
+          <h3 class="text-base sm:text-lg font-bold flex items-center gap-2">
+            실시간 수학여행 사진 공유 갤러리 (패들렛)
+            <span class="text-[10px] bg-white/30 px-2 py-0.5 rounded-full font-extrabold uppercase">Live</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-pink-100 mt-0.5">
+            탐방지에서 찍은 멋진 사진과 모둠별 추억을 패들렛에 실시간으로 공유해 보세요!
+          </p>
+        </div>
+      </div>
+      <a href="https://padlet.com/ecokimt/2026-2-p4yy42g22uktlvz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-rose-600 hover:bg-rose-50 px-5 py-2.5 rounded-2xl font-extrabold text-xs sm:text-sm shadow-md transition transform hover:scale-105 shrink-0">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <span>패들렛 사진 올리기</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+      </a>
+    </div>
 
     <!-- 1. SCHEDULE TAB -->
     <section id="tab-schedule" class="tab-content space-y-6">
@@ -368,6 +404,14 @@
 
   </main>
 
+  <!-- Sticky Floating Action Button (FAB) for Padlet Upload -->
+  <a href="https://padlet.com/ecokimt/2026-2-p4yy42g22uktlvz" target="_blank" rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 hover:from-rose-600 hover:to-pink-700 text-white py-3.5 px-5 rounded-full shadow-2xl flex items-center gap-2.5 font-bold text-sm transition-all transform hover:scale-105 active:scale-95 border-2 border-white/40 group animate-pulse-subtle">
+    <i class="fa-solid fa-camera-retro text-lg group-hover:rotate-12 transition-transform"></i>
+    <span class="tracking-tight">사진 올리기</span>
+    <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-80"></i>
+  </a>
+
   <!-- Modal for Spot Detail -->
   <div id="spot-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
@@ -389,15 +433,21 @@
           행정실: <a href="tel:033-763-8631" class="hover:underline text-white font-semibold">033-763-8631</a>
         </p>
       </div>
-      <div class="text-left sm:text-right">
+      <div class="text-left sm:text-right space-y-1">
         <p>인솔 책임: 2학년부 (인솔교사 5명, 학생 82명)</p>
-        <p class="text-slate-500 mt-1">안전하고 배움이 가득한 행복한 테마여행</p>
+        <p class="text-slate-500">
+          <a href="https://padlet.com/ecokimt/2026-2-p4yy42g22uktlvz" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline">
+            <i class="fa-solid fa-camera mr-1"></i>여행 사진 패들렛 바로가기
+          </a>
+        </p>
       </div>
     </div>
   </footer>
 
   <!-- WebApp JavaScript Logic -->
   <script>
+    const padletUrl = "https://padlet.com/ecokimt/2026-2-p4yy42g22uktlvz";
+
     const scheduleData = [
       {
         day: 1, date: "2026. 9. 2.(수)", time: "09:40 ~ 14:00",
@@ -743,17 +793,27 @@
       const modalContent = document.getElementById('modal-content');
       modalContent.innerHTML = `
         <div class="space-y-5">
-          <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-brand-100 text-brand-800">${spot.category}</span>
-            <span class="text-xs text-slate-400 font-medium flex items-center gap-1">
-              <i class="fa-solid fa-location-dot text-rose-500"></i> ${spot.location}
-            </span>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-brand-100 text-brand-800">${spot.category}</span>
+              <span class="text-xs text-slate-400 font-medium flex items-center gap-1">
+                <i class="fa-solid fa-location-dot text-rose-500"></i> ${spot.location}
+              </span>
+            </div>
           </div>
 
           <div>
             <h2 class="text-2xl font-black text-slate-900">${spot.name}</h2>
             <p class="text-sm font-semibold text-brand-600 mt-1">${spot.summary}</p>
           </div>
+
+          <!-- Direct Padlet Upload Link in Modal -->
+          <a href="${padletUrl}" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white rounded-xl text-xs sm:text-sm font-bold shadow-md transition transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-camera"></i>
+            <span>[${spot.name}] 사진 패들렛에 공유하기</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-80"></i>
+          </a>
 
           <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-sm text-slate-700 leading-relaxed">
             ${spot.desc}
