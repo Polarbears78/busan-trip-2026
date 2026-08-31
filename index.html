@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 육민관중학교 부산 테마학습여행 가이드</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts (Noto Sans KR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #0369a1 50%, #0ea5e9 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+  <!-- Header / Hero Section -->
+  <header class="hero-gradient text-white shadow-xl relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-12 relative z-10">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/30 text-sky-200 text-xs font-semibold backdrop-blur-sm border border-sky-400/20 mb-2">
+            <i class="fa-solid fa-graduation-cap"></i> 2026학년도 2학년 테마학습여행
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+            육민관중학교 부산 수학여행 웹 가이드
+          </h1>
+          <p class="text-sky-100 text-sm sm:text-base mt-2 flex items-center gap-2 flex-wrap">
+            <span><i class="fa-regular fa-calendar"></i> 2026. 9. 2.(수) ~ 9. 4.(금) [2박 3일]</span>
+            <span class="hidden sm:inline">|</span>
+            <span><i class="fa-solid fa-location-dot text-rose-400"></i> 부산광역시 일원 (해운대, 기장, 감천, 영도)</span>
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 text-center min-w-[90px]">
+            <div class="text-xs text-sky-200">참가 인원</div>
+            <div class="text-lg font-bold">87명</div>
+            <div class="text-[10px] text-sky-300">학생 82 / 교사 5</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 text-center min-w-[90px]">
+            <div class="text-xs text-sky-200">이동 열차</div>
+            <div class="text-lg font-bold">E-train</div>
+            <div class="text-[10px] text-sky-300">원주 ↔ 신해운대</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex space-x-1 sm:space-x-2 mt-8 bg-slate-900/40 p-1.5 rounded-2xl backdrop-blur-md border border-white/10 max-w-2xl overflow-x-auto">
+        <button onclick="switchTab('schedule')" id="tab-btn-schedule" class="tab-btn flex-1 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 bg-white text-brand-900 shadow">
+          <i class="fa-solid fa-clock-rotate-left mr-1.5"></i> 상세 일정표
+        </button>
+        <button onclick="switchTab('spots')" id="tab-btn-spots" class="tab-btn flex-1 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 text-sky-100 hover:text-white hover:bg-white/10">
+          <i class="fa-solid fa-compass mr-1.5 text-amber-300"></i> 탐방지 백과
+        </button>
+        <button onclick="switchTab('edu')" id="tab-btn-edu" class="tab-btn flex-1 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 text-sky-100 hover:text-white hover:bg-white/10">
+          <i class="fa-solid fa-book-open mr-1.5 text-emerald-300"></i> 교과 연계
+        </button>
+        <button onclick="switchTab('safety')" id="tab-btn-safety" class="tab-btn flex-1 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 text-sky-100 hover:text-white hover:bg-white/10">
+          <i class="fa-solid fa-shield-halved mr-1.5 text-rose-300"></i> 안전 수칙
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+
+    <!-- 1. SCHEDULE TAB -->
+    <section id="tab-schedule" class="tab-content space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-slate-200">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-2.5 h-6 bg-brand-600 rounded-full inline-block"></span>
+            2박 3일 테마학습여행 타임라인
+          </h2>
+          <p class="text-sm text-slate-500 mt-1">원주역 출발부터 부산 전역 탐방 및 귀교까지의 일자별 상세 동선입니다.</p>
+        </div>
+        <!-- Day Selector Buttons -->
+        <div class="inline-flex bg-slate-200/80 p-1 rounded-xl">
+          <button onclick="filterDay('all')" id="day-btn-all" class="day-filter-btn px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition bg-white text-brand-700 shadow-sm">전체 일정</button>
+          <button onclick="filterDay(1)" id="day-btn-1" class="day-filter-btn px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition text-slate-600 hover:text-slate-900">1일차 (9/2)</button>
+          <button onclick="filterDay(2)" id="day-btn-2" class="day-filter-btn px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition text-slate-600 hover:text-slate-900">2일차 (9/3)</button>
+          <button onclick="filterDay(3)" id="day-btn-3" class="day-filter-btn px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition text-slate-600 hover:text-slate-900">3일차 (9/4)</button>
+        </div>
+      </div>
+
+      <!-- Schedule Timeline Cards Container -->
+      <div id="schedule-container" class="space-y-4"></div>
+    </section>
+
+    <!-- 2. SPOTS ENCYCLOPEDIA TAB -->
+    <section id="tab-spots" class="tab-content hidden space-y-6">
+      <div class="pb-2 border-b border-slate-200">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-amber-500 rounded-full inline-block"></span>
+          주요 탐방지 및 체험 활동 심층 소개
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">부산의 역사적 가치와 문화·예술, 해양 레저를 만끽할 수 있는 핵심 명소 가이드입니다.</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap gap-2 pt-1">
+        <button onclick="filterSpotCategory('all')" class="spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-brand-600 text-white shadow-sm" data-category="all">전체보기</button>
+        <button onclick="filterSpotCategory('역사/문화')" class="spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300" data-category="역사/문화">역사 & 문화</button>
+        <button onclick="filterSpotCategory('해양/자연')" class="spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300" data-category="해양/자연">해양 & 자연</button>
+        <button onclick="filterSpotCategory('레저/체험')" class="spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300" data-category="레저/체험">레저 & 액티비티</button>
+        <button onclick="filterSpotCategory('미디어아트')" class="spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300" data-category="미디어아트">미디어 아트</button>
+      </div>
+
+      <!-- Spots Grid Container -->
+      <div id="spots-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- 3. CURRICULUM LINK TAB -->
+    <section id="tab-edu" class="tab-content hidden space-y-6">
+      <div class="pb-2 border-b border-slate-200">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-emerald-600 rounded-full inline-block"></span>
+          교육과정 연계 및 탐구 과제 (총 18시간)
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">2026학년도 2학년 2학기 교과 및 창의적 체험활동 성취기준과 연계된 학습 목표입니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">국어과 (3시간)</span>
+            <span class="text-xs text-slate-400 font-mono">[9국01-02]</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800">공감적 대화와 공동체 소통</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            상대의 감정에 공감하며 적절하게 반응하는 대화를 나눈다. E-train 열차 프로그램과 2박 3일 모둠 협동 활동을 통해 타인에 대한 배려와 경청의 태도를 체득합니다.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-800">과학과 (3시간)</span>
+            <span class="text-xs text-slate-400 font-mono">[9과12-03]</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800">인체 순환계와 운동 생리 / 해양 물리</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            순환계의 구조와 기능을 이해하고 혈액 순환 경로를 나타낸다. 루지 탑승 시 심박수 변화 및 신체 운동 반응, 부산 앞바다 조석·파도 등 해양 환경을 관찰합니다.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">역사과 (3시간)</span>
+            <span class="text-xs text-slate-400 font-mono">[9역04-01]</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800">피란 수도 부산과 근현대 시민 사회</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            한국전쟁 당시 임시수도였던 부산의 역사와 감천문화마을에 서린 피란민들의 애환을 직접 걸으며 탐구하고, 근현대 민족사의 발전과 평화의 소중함을 되새깁니다.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 text-teal-800">기술·가정 (3시간)</span>
+            <span class="text-xs text-slate-400 font-mono">[9기가02-02]</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800">식사 구성안 및 영양 평가</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            영양 섭취 기준과 식사 구성안을 고려하여 여행 중 단체 급식(현지식, 호텔 뷔페 등)의 영양 균형을 분석하고 식생활 습관을 자기 평가합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200">
+        <h3 class="text-base font-bold text-emerald-900 flex items-center gap-2">
+          <i class="fa-solid fa-compass text-emerald-600"></i> 창의적 체험활동 (6시간: 자율활동 2시간 + 진로활동 4시간)
+        </h3>
+        <p class="text-sm text-emerald-800 mt-2 leading-relaxed">
+          아르떼뮤지엄 미디어 아트와 첨단 관광·해양 레저 산업 현장을 체험하며 디지털 융합 예술 및 미래 해양·관광 산업 분야의 다양한 진로를 탐색합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. SAFETY & GUIDELINES TAB -->
+    <section id="tab-safety" class="tab-content hidden space-y-6">
+      <div class="pb-2 border-b border-slate-200">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-rose-600 rounded-full inline-block"></span>
+          안전 지도 및 상황별 응급 대응 매뉴얼
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">안전하고 즐거운 테마학습여행을 위한 필수 안전 수칙 및 비상 대처 요령입니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center gap-3 text-brand-700 font-bold text-lg">
+            <div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-brand-600">
+              <i class="fa-solid fa-sailboat"></i>
+            </div>
+            체험 활동 안전 (루지 & 요트)
+          </div>
+          <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+            <li><strong>요트 체험:</strong> 탑승 즉시 구명조끼를 바르게 착용하며, 갑판 위에서 장난이나 과격한 행동 금지.</li>
+            <li><strong>루지 체험:</strong> 머리에 맞는 헬멧을 반드시 착용하고, 주행 중 핸들을 양손으로 잡으며 안전거리 유지 및 과속 금지.</li>
+            <li>탑승 전 안전요원의 브리핑 및 조작법 설명을 끝까지 집중하여 청취.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center gap-3 text-indigo-700 font-bold text-lg">
+            <div class="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+              <i class="fa-solid fa-bus"></i>
+            </div>
+            교통 및 이동 안전 (열차 & 버스)
+          </div>
+          <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+            <li><strong>전세버스:</strong> 탑승 즉시 전 좌석 안전벨트 착용 의무화 및 운행 중 자리 이탈 금지.</li>
+            <li><strong>E-train:</strong> 승하차 시 발 빠짐 주의 및 통로 질서 유지.</li>
+            <li>휴게소 및 정류장 하차 시 이동 차량에 각별히 주의하고 출발 시간 엄수.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center gap-3 text-amber-700 font-bold text-lg">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600">
+              <i class="fa-solid fa-hotel"></i>
+            </div>
+            숙소 생활 및 야간 안전 (서면 TT호텔)
+          </div>
+          <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+            <li>객실 베란다 난간 기대기 금지 및 타 객실 무단 방문 금지.</li>
+            <li>화재 대피로 및 소화기, 완강기 위치 사전 확인.</li>
+            <li>야간 무단 외출 및 유해업소 접근 절대 금지 (교사 야간 순회 및 전담 안전지도 운영).</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-center gap-3 text-rose-700 font-bold text-lg">
+            <div class="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600">
+              <i class="fa-solid fa-kit-medical"></i>
+            </div>
+            응급 상황 대처 (RICE 처치법)
+          </div>
+          <p class="text-xs text-slate-500">도보 이동 또는 활동 중 발목 염좌 등 발생 시 즉시 처치:</p>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-rose-50 p-2.5 rounded-lg border border-rose-100">
+              <span class="font-bold text-rose-900 block">Rest (안정)</span>다친 부위를 쉬게 함
+            </div>
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100">
+              <span class="font-bold text-blue-900 block">Ice (냉찜질)</span>부종 및 통증 완화
+            </div>
+            <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-100">
+              <span class="font-bold text-amber-900 block">Compression (압박)</span>붕대로 압박 고정
+            </div>
+            <div class="bg-emerald-50 p-2.5 rounded-lg border border-emerald-100">
+              <span class="font-bold text-emerald-900 block">Elevation (거상)</span>심장보다 높게 유지
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency Contacts Banner -->
+      <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h4 class="font-bold text-base flex items-center gap-2">
+            <i class="fa-solid fa-phone-volume text-rose-400"></i> 비상 긴급 연락망
+          </h4>
+          <p class="text-xs text-slate-300 mt-1">응급 상황 발생 시 인솔교사 또는 상황실로 즉시 연락하세요.</p>
+        </div>
+        <div class="flex gap-4 text-xs font-semibold">
+          <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">해양긴급: <span class="text-sky-400">122</span></div>
+          <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">응급구조/소방: <span class="text-rose-400">119</span></div>
+          <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">경찰: <span class="text-amber-400">112</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal for Spot Detail -->
+  <div id="spot-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+      <button onclick="closeModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center gap-4">
+      <div>
+        <p class="font-bold text-slate-200">육민관중학교 2학년 테마학습여행 지원단</p>
+        <p class="mt-0.5">강원특별자치도 원주시 판부면 | 2026. 9. 2. ~ 9. 4. 부산광역시</p>
+      </div>
+      <div class="text-right">
+        <p>인솔 책임: 2학년부 (인솔교사 5명, 학생 82명)</p>
+        <p class="text-slate-500 mt-0.5">안전하고 유익한 배움이 있는 여행</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WebApp JavaScript Logic -->
+  <script>
+    const scheduleData = [
+      {
+        day: 1, date: "2026. 9. 2.(수)", time: "09:40 ~ 14:00",
+        title: "원주역 출발 & E-train 테마 열차 여행",
+        location: "원주역 → 신해운대역", category: "이동", badge: "E-train",
+        desc: "교육전용열차(E-train) 탑승 후 부산으로 이동하며 열차 내 특별 프로그램 참여. 중식은 열차 내 도시락으로 제공.",
+        icon: "fa-train", color: "bg-blue-500"
+      },
+      {
+        day: 1, date: "2026. 9. 2.(수)", time: "14:00 ~ 14:30",
+        title: "신해운대역 도착 및 전세버스 탑승",
+        location: "신해운대역", category: "이동", badge: "버스 3대",
+        desc: "신해운대역 집결 후 학급별 지정 전세버스(1호차~3호차) 탑승 및 동백섬으로 이동.",
+        icon: "fa-bus", color: "bg-indigo-500"
+      },
+      {
+        day: 1, date: "2026. 9. 2.(수)", time: "14:30 ~ 16:00",
+        title: "해운대 동백섬 & 누리마루 APEC 하우스 탐방",
+        location: "부산 해운대구 우동", category: "탐방", badge: "역사/자연",
+        desc: "동백나무와 소나무가 울창한 동백섬 산책로 탐방 및 2005년 APEC 정상회의가 열린 누리마루 APEC 하우스 관람, 해운대 백사장 조망.",
+        icon: "fa-landmark", color: "bg-emerald-500", spotId: "dongbaek"
+      },
+      {
+        day: 1, date: "2026. 9. 2.(수)", time: "16:30 ~ 17:30",
+        title: "럭셔리 힐링 부산 바다 요트 체험",
+        location: "수영만 요트경기장", category: "체험", badge: "해양레저",
+        desc: "수영만에서 출항하여 광안대교와 마린시티 마천루를 바다 위에서 조망하는 낭만 해양 레저 투어 (구명조끼 필수 착용).",
+        icon: "fa-sailboat", color: "bg-sky-500", spotId: "yacht"
+      },
+      {
+        day: 1, date: "2026. 9. 2.(수)", time: "17:30 ~ 22:00",
+        title: "숙소 이동, 석식 뷔페 및 휴식",
+        location: "서면 TT호텔", category: "숙소/식사", badge: "숙소 뷔페",
+        desc: "객실 배정 후 호텔 뷔페 석식 진행. 자유시간 후 22:00 인원 점검 및 건강 상태 파악 후 취침.",
+        icon: "fa-hotel", color: "bg-amber-500"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "07:00 ~ 09:10",
+        title: "조식 식사 및 감천문화마을로 이동",
+        location: "서면 TT호텔 → 사하구 감천동", category: "식사/이동", badge: "호텔 조식",
+        desc: "숙소 뷔페 조식 후 전세버스로 부산의 역사적 명소 감천문화마을로 이동.",
+        icon: "fa-utensils", color: "bg-amber-500"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "09:20 ~ 10:50",
+        title: "사람 냄새 나는 감천문화마을 스탬프 투어",
+        location: "부산 사하구 감천동", category: "탐방", badge: "근현대사",
+        desc: "한국전쟁 피란민의 삶의 터전이었던 계단식 주택과 골목길을 예술 공간으로 재탄생시킨 마을 탐방 및 스탬프 미션 수행.",
+        icon: "fa-palette", color: "bg-rose-500", spotId: "gamcheon"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "11:50 ~ 13:20",
+        title: "중식 (현지식) 및 자유시간",
+        location: "만부 부대찌개", category: "식사", badge: "현지식",
+        desc: "든든한 현지식 부대찌개 식사 후 주변 안전 구역 내 자유 산책 및 휴식.",
+        icon: "fa-bowl-food", color: "bg-amber-600"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "13:50 ~ 14:50",
+        title: "해동제일 대명지 해동 용궁사 탐방",
+        location: "부산 기장군 시랑리", category: "탐방", badge: "전통문화",
+        desc: "푸른 동해 바다 바위 절벽 위에 세워진 수상 법당 해동 용궁사 관람. 탁 트인 바다 전경과 십이지신상 감상.",
+        icon: "fa-place-of-worship", color: "bg-emerald-600", spotId: "yonggungsa"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "15:00 ~ 16:20",
+        title: "스릴만점! 스카이라인 루지 부산 체험 (2회)",
+        location: "부산 기장 오시리아 관광단지", category: "체험", badge: "액티비티",
+        desc: "중력을 이용해 트랙을 질주하는 무동력 카트 루지 2회 탑승. 리프트 탑승 및 헬멧 착용 안전 교육 철저 시행.",
+        icon: "fa-car-side", color: "bg-purple-600", spotId: "luge"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "17:00 ~ 18:30",
+        title: "석식 (쿠우쿠우 해운대점 특식 뷔페)",
+        location: "쿠우쿠우 해운대점", category: "식사", badge: "특식 뷔페",
+        desc: "학생들의 선호도가 높은 초밥 및 다채로운 샐러드바 뷔페로 푸짐한 저녁 식사.",
+        icon: "fa-utensils", color: "bg-amber-500"
+      },
+      {
+        day: 2, date: "2026. 9. 3.(목)", time: "19:30 ~ 22:00",
+        title: "숙소 복귀, 일일 평가회 및 취침",
+        location: "서면 TT호텔", category: "숙소", badge: "생활지도",
+        desc: "숙소 귀환 후 2일차 일정 정리, 교사 일일 평가회, 22:00 야간 점호 및 취침.",
+        icon: "fa-bed", color: "bg-slate-600"
+      },
+      {
+        day: 3, date: "2026. 9. 4.(금)", time: "08:00 ~ 10:20",
+        title: "조식, 체크아웃 및 영도 이동",
+        location: "서면 TT호텔 → 영도구", category: "식사/이동", badge: "체크아웃",
+        desc: "숙소 조식 후 객실 짐 정리 및 분실물 점검. 영도 아르떼뮤지엄으로 이동.",
+        icon: "fa-suitcase-rolling", color: "bg-slate-500"
+      },
+      {
+        day: 3, date: "2026. 9. 4.(금)", time: "10:20 ~ 11:40",
+        title: "몰입형 미디어 아트 전시관 '아르떼뮤지엄 부산'",
+        location: "부산 영도구 해양로", category: "탐방/예술", badge: "미디어아트",
+        desc: "'영원한 자연(Eternal Nature)'을 주제로 빛과 소리가 빚어내는 몰입형 디지털 미디어 아트 감상 및 예술적 감수성 함양.",
+        icon: "fa-wand-magic-sparkles", color: "bg-teal-600", spotId: "artemuseum"
+      },
+      {
+        day: 3, date: "2026. 9. 4.(금)", time: "11:40 ~ 16:52",
+        title: "신해운대역 이동 및 E-train 탑승 귀교",
+        location: "신해운대역 → 원주역", category: "이동", badge: "귀교",
+        desc: "12:30 신해운대역 출발, 열차 내 도시락 중식 및 소감문 작성. 16:52 원주역 도착 후 해산.",
+        icon: "fa-flag-checkered", color: "bg-brand-600"
+      }
+    ];
+
+    const spotsData = [
+      {
+        id: "dongbaek",
+        name: "동백섬 & 누리마루 APEC 하우스",
+        category: "역사/문화",
+        location: "부산 해운대구 우동 714",
+        summary: "울창한 동백나무 숲길과 세계 정상이 모였던 역사적 외교 무대",
+        tags: ["해운대 8경", "APEC 정상회의", "동백숲길", "해안산책로"],
+        imageBg: "from-emerald-600 to-teal-800",
+        icon: "fa-landmark",
+        desc: "해운대 해수욕장 서쪽에 위치한 동백섬은 예로부터 동백나무와 울창한 송림이 어우러져 절경을 이루는 곳입니다. 산책로를 따라 걸으면 2005년 제13차 APEC 정상회의가 열린 '누리마루 APEC 하우스'를 만날 수 있으며, 한국 전통 정자 건축양식을 현대적으로 재해석한 건축미와 함께 광안대교, 오륙도를 잇는 환상적인 부산 앞바다 파노라마를 조망할 수 있습니다.",
+        eduPoints: [
+          "현대 국제 외교사와 다자간 정상회담의 의의 학습",
+          "해안 침식 지형과 난대림 생태계 식생 관찰",
+          "최치원 선생의 석각 등 해운대의 유래와 인문 지리 탐구"
+        ],
+        safetyTips: "해안 목재 데크로드는 보행 질서를 유지하고 난간 밖으로 몸을 기울이지 않습니다."
+      },
+      {
+        id: "yacht",
+        name: "부산 바다 럭셔리 요트 투어",
+        category: "레저/체험",
+        location: "수영만 요트경기장 (해운대구 해운대해변로 84)",
+        summary: "바다 위에서 광안대교와 마린시티의 웅장함을 마주하는 해양 레저",
+        tags: ["수영만 요트", "광안대교 뷰", "해양레저", "호연지기"],
+        imageBg: "from-blue-600 to-cyan-800",
+        icon: "fa-sailboat",
+        desc: "대한민국 해양 레저의 중심지 수영만 요트경기장에서 출항하여, 마린시티의 초고층 스카이라인과 웅장한 광안대교 하부를 항해합니다. 시원한 바닷바람과 함께 부산이 자랑하는 세계적인 해양 도시의 면모를 가장 가까이에서 체험할 수 있는 최고 인기 힐링 프로그램입니다.",
+        eduPoints: [
+          "바람과 부력, 유체역학 원리를 활용한 선박 운항 원리 이해",
+          "해양 관광 산업의 부가가치와 도시 브랜드 가치 체험",
+          "자연과 조화된 해양 도시 공간 구조 파악"
+        ],
+        safetyTips: "탑승 전후 반드시 구명조끼(구명동의)를 단단히 착용하고 선장의 통제에 절대 따릅니다."
+      },
+      {
+        id: "gamcheon",
+        name: "감천문화마을 (스탬프 투어)",
+        category: "역사/문화",
+        location: "부산 사하구 감내2로 203",
+        summary: "한국전쟁 피란민의 애환에서 세계적인 문화예술 마을로 탈바꿈한 역사의 보고",
+        tags: ["피란수도 부산", "도시재생", "어린왕자", "골목길 미로"],
+        imageBg: "from-rose-500 to-pink-700",
+        icon: "fa-palette",
+        desc: "1950년대 6·25 전쟁 피란민들이 산비탈을 일구어 만든 계단식 마을입니다. 모든 길이 통하는 미로 같은 골목길과 파스텔톤 계단식 주택이 독특한 경관을 이룹니다. 2009년 마을미술 프로젝트를 시작으로 주민과 예술가들이 협력하여 만든 '도시재생의 대표 롤모델'이며, 어린왕자와 사막여우 포토존을 비롯해 마을 곳곳의 스탬프 포인트를 찾아가는 재미가 있습니다.",
+        eduPoints: [
+          "6·25 전쟁과 피란민의 생활사, 근현대 한국 도시 형성사 학습",
+          "원도심 쇠퇴 극복과 주민 참여형 도시재생 및 공공예술의 가치 탐구",
+          "골목 공동체 문화와 타인에 대한 예의(정숙 보행) 실천"
+        ],
+        safetyTips: "실제 주민이 거주하는 구역이므로 정숙을 유지하고, 좁고 가파른 계단에서 뛰지 않습니다."
+      },
+      {
+        id: "yonggungsa",
+        name: "해동제일 대명지 해동 용궁사",
+        category: "역사/문화",
+        location: "부산 기장군 기장읍 용궁길 86",
+        summary: "거친 바위 절벽과 푸른 파도가 절경을 이루는 대한민국 대표 수상 사찰",
+        tags: ["바다사찰", "108장수계단", "해맞이명소", "기장 팔경"],
+        imageBg: "from-amber-600 to-yellow-800",
+        icon: "fa-place-of-worship",
+        desc: "1376년 고려 공민왕 때 왕사 나옹화상이 창건한 유서 깊은 사찰로, 대부분의 사찰이 산속에 있는 것과 달리 탁 트인 동해 바닷가 바위 절벽 위에 지어진 수상 법당입니다. 108돌계단을 내려가며 마주하는 웅장한 바다 풍경과 해수관음대불, 용두암 바위 등이 어우러져 장관을 이룹니다.",
+        eduPoints: [
+          "고려 후기 불교 문화와 관음 신앙의 역사적 맥락 이해",
+          "기장 해안선 암석 해안(해식애, 파식대)의 지형학적 특성 관찰",
+          "자연 지형과 조화를 이룬 한국 전통 종교 건축의 공간 구성미 체득"
+        ],
+        safetyTips: "바위 및 계단에 물기가 있어 미끄러울 수 있으므로 편안한 운동화를 착용하고 난간을 잡고 이동합니다."
+      },
+      {
+        id: "luge",
+        name: "스카이라인 루지 부산 (기장)",
+        category: "레저/체험",
+        location: "부산 기장군 기장읍 시랑리 산60-1",
+        summary: "오시리아 관광단지를 가르는 스릴 넘치는 그래비티 카트 레이싱",
+        tags: ["무동력 카트", "오시리아", "스카이라인", "스피드 체험"],
+        imageBg: "from-purple-600 to-indigo-800",
+        icon: "fa-car-side",
+        desc: "뉴질랜드 로토루아에서 탄생한 글로벌 어트랙션으로, 특수 제작된 카트를 타고 중력 가속도만을 이용해 굽이치는 트랙을 활주합니다. 출발지까지 체어리프트(스카이라이드)를 타고 바다 전경을 감상한 후, 각자 조종 핸들바로 속도를 제어하며 2회 짜릿한 주행을 즐깁니다.",
+        eduPoints: [
+          "위치에너지의 운동에너지 전환, 마찰력 및 원심력 등 물리 법칙 체감",
+          "상황 판단력 및 순발력, 자기 통제력과 스포츠맨십 함양",
+          "현대 테마파크 엔지니어링 및 레저 안전 시스템 구조 파악"
+        ],
+        safetyTips: "탑승 전 머리 크기에 맞는 헬멧을 반드시 착용하고, 주행 중 양손으로 핸들을 놓지 않으며 발을 카트 밖으로 내밀지 않습니다."
+      },
+      {
+        id: "artemuseum",
+        name: "아르떼뮤지엄 부산 (영도)",
+        category: "미디어아트",
+        location: "부산 영도구 해양로 247번길 29",
+        summary: "'영원한 자연'을 빛과 소리로 구현한 세계 최대 규모 몰입형 미디어 아트",
+        tags: ["몰입형 아트", "디지털 사이니지", "빛과 소리", "영도 핫플"],
+        imageBg: "from-teal-600 to-slate-900",
+        icon: "fa-wand-magic-sparkles",
+        desc: "세계적인 디지털 디자인 기업 디스트릭트(d'strict)가 선보이는 몰입형 미디어아트 전시관입니다. 'Eternal Nature(영원한 자연)'를 테마로 웅장한 폭포, 꽃, 파도, 정글 등을 프로젝션 맵핑과 인터랙티브 미디어, 맞춤형 향기와 사운드로 연출하여 관람객이 예술 작품의 일부가 되는 환상적인 공감각적 경험을 선사합니다.",
+        eduPoints: [
+          "디지털 테크놀로지와 시각 예술이 결합한 현대 융합 예술의 발전 양상 탐구",
+          "공감각적(시각·청각·후각) 예술 표현 기법의 심미적 수용 능력 함양",
+          "영도 해양 공업 지구의 문화 재생 공간 혁신 사례 학습"
+        ],
+        safetyTips: "어두운 전시 공간 내에서 관람객 간 충돌을 방지하기 위해 천천히 이동하며 거울 벽면에 주의합니다."
+      }
+    ];
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-white', 'text-brand-900', 'shadow');
+        btn.classList.add('text-sky-100');
+      });
+
+      const targetTab = document.getElementById(`tab-${tabId}`);
+      const targetBtn = document.getElementById(`tab-btn-${tabId}`);
+      if (targetTab && targetBtn) {
+        targetTab.classList.remove('hidden');
+        targetBtn.classList.add('bg-white', 'text-brand-900', 'shadow');
+        targetBtn.classList.remove('text-sky-100');
+      }
+    }
+
+    function renderSchedule(filter = 'all') {
+      const container = document.getElementById('schedule-container');
+      container.innerHTML = '';
+
+      const filtered = filter === 'all' 
+        ? scheduleData 
+        : scheduleData.filter(item => item.day === parseInt(filter));
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start relative overflow-hidden group";
+        
+        const spotButton = item.spotId ? `
+          <button onclick="openModal('${item.spotId}')" class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 bg-sky-50 hover:bg-sky-100 px-3 py-1.5 rounded-lg transition border border-sky-200/60">
+            <i class="fa-solid fa-circle-info"></i> 탐방지 상세 가이드 보기
+          </button>
+        ` : '';
+
+        card.innerHTML = `
+          <div class="flex sm:flex-col items-center justify-between sm:justify-center w-full sm:w-28 shrink-0 bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full ${item.day === 1 ? 'bg-blue-100 text-blue-800' : item.day === 2 ? 'bg-indigo-100 text-indigo-800' : 'bg-teal-100 text-teal-800'}">${item.day}일차</span>
+            <span class="text-xs font-semibold text-slate-500 mt-1">${item.time}</span>
+          </div>
+
+          <div class="flex-1 space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-bold text-white ${item.color} px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                <i class="fa-solid ${item.icon}"></i> ${item.badge}
+              </span>
+              <h3 class="text-base sm:text-lg font-bold text-slate-800">${item.title}</h3>
+            </div>
+            <p class="text-xs font-medium text-slate-400 flex items-center gap-1">
+              <i class="fa-solid fa-location-dot text-rose-500"></i> ${item.location}
+            </p>
+            <p class="text-sm text-slate-600 leading-relaxed pt-1">${item.desc}</p>
+            ${spotButton}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterDay(day) {
+      document.querySelectorAll('.day-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-white', 'text-brand-700', 'shadow-sm');
+        btn.classList.add('text-slate-600');
+      });
+      const activeBtn = document.getElementById(`day-btn-${day}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-white', 'text-brand-700', 'shadow-sm');
+        activeBtn.classList.remove('text-slate-600');
+      }
+      renderSchedule(day);
+    }
+
+    function renderSpots(category = 'all') {
+      const grid = document.getElementById('spots-grid');
+      grid.innerHTML = '';
+
+      const filtered = category === 'all'
+        ? spotsData
+        : spotsData.filter(s => s.category.includes(category));
+
+      filtered.forEach(spot => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer";
+        card.onclick = () => openModal(spot.id);
+
+        card.innerHTML = `
+          <div class="h-36 bg-gradient-to-br ${spot.imageBg} p-5 flex flex-col justify-between text-white relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 text-8xl text-white/10 group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-solid ${spot.icon}"></i>
+            </div>
+            <span class="self-start text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/20 backdrop-blur-md border border-white/20">
+              ${spot.category}
+            </span>
+            <div class="relative z-10">
+              <h3 class="text-lg font-extrabold tracking-tight">${spot.name}</h3>
+              <p class="text-xs text-sky-100 truncate">${spot.location}</p>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <p class="text-sm font-semibold text-slate-700 leading-snug">${spot.summary}</p>
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                ${spot.tags.map(t => `<span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">#${t}</span>`).join('')}
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-brand-600 font-bold">
+              <span>상세 해설 및 교육 가이드</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterSpotCategory(cat) {
+      document.querySelectorAll('.spot-cat-btn').forEach(btn => {
+        if (btn.dataset.category === cat) {
+          btn.className = "spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-brand-600 text-white shadow-sm";
+        } else {
+          btn.className = "spot-cat-btn px-3 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300";
+        }
+      });
+      renderSpots(cat);
+    }
+
+    function openModal(spotId) {
+      const spot = spotsData.find(s => s.id === spotId);
+      if (!spot) return;
+
+      const modalContent = document.getElementById('modal-content');
+      modalContent.innerHTML = `
+        <div class="space-y-5">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-brand-100 text-brand-800">${spot.category}</span>
+            <span class="text-xs text-slate-400 font-medium flex items-center gap-1">
+              <i class="fa-solid fa-location-dot text-rose-500"></i> ${spot.location}
+            </span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900">${spot.name}</h2>
+            <p class="text-sm font-semibold text-brand-600 mt-1">${spot.summary}</p>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-sm text-slate-700 leading-relaxed">
+            ${spot.desc}
+          </div>
+
+          <div class="space-y-2">
+            <h4 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+              <i class="fa-solid fa-lightbulb text-amber-500"></i> 주요 탐구 및 교육 포인트
+            </h4>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside bg-amber-50/60 p-3.5 rounded-xl border border-amber-200/60">
+              ${spot.eduPoints.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="space-y-1 bg-rose-50 p-3.5 rounded-xl border border-rose-200/60 text-xs sm:text-sm text-rose-900">
+            <h4 class="font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-triangle-exclamation text-rose-600"></i> 현장 안전 수칙
+            </h4>
+            <p>${spot.safetyTips}</p>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            ${spot.tags.map(t => `<span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg font-medium">#${t}</span>`).join('')}
+          </div>
+        </div>
+      `;
+
+      document.getElementById('spot-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('spot-modal').classList.add('hidden');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('spot-modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSchedule('all');
+      renderSpots('all');
+    });
+  </script>
+</body>
+</html>
