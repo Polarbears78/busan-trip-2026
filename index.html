@@ -35,6 +35,10 @@
   </script>
   <style>
     body { font-family: 'Noto Sans KR', sans-serif; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
     .hero-gradient {
       background: linear-gradient(135deg, #0f172a 0%, #0369a1 50%, #0ea5e9 100%);
     }
@@ -57,7 +61,11 @@
           <p class="text-sky-100 text-sm sm:text-base mt-2 flex items-center gap-2 flex-wrap">
             <span><i class="fa-regular fa-calendar"></i> 2026. 9. 2.(수) ~ 9. 4.(금) [2박 3일]</span>
             <span class="hidden sm:inline">|</span>
-            <span><i class="fa-solid fa-location-dot text-rose-400"></i> 부산광역시 일원 (해운대, 기장, 감천, 영도)</span>
+            <span><i class="fa-solid fa-location-dot text-rose-400"></i> 부산광역시 일원</span>
+            <span class="hidden sm:inline">|</span>
+            <a href="tel:033-763-8632" class="inline-flex items-center gap-1 text-sky-200 hover:text-white bg-white/10 px-2.5 py-0.5 rounded-full border border-white/20 text-xs transition">
+              <i class="fa-solid fa-phone"></i> 학교 교무실: 033-763-8632
+            </a>
           </p>
         </div>
         <div class="flex items-center gap-3">
@@ -86,7 +94,7 @@
           <i class="fa-solid fa-book-open mr-1.5 text-emerald-300"></i> 교과 연계
         </button>
         <button onclick="switchTab('safety')" id="tab-btn-safety" class="tab-btn flex-1 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 text-sky-100 hover:text-white hover:bg-white/10">
-          <i class="fa-solid fa-shield-halved mr-1.5 text-rose-300"></i> 안전 수칙
+          <i class="fa-solid fa-shield-halved mr-1.5 text-rose-300"></i> 안전·연락망
         </button>
       </nav>
     </div>
@@ -207,16 +215,88 @@
       </div>
     </section>
 
-    <!-- 4. SAFETY & GUIDELINES TAB -->
+    <!-- 4. SAFETY & EMERGENCY CONTACTS TAB -->
     <section id="tab-safety" class="tab-content hidden space-y-6">
       <div class="pb-2 border-b border-slate-200">
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
           <span class="w-2.5 h-6 bg-rose-600 rounded-full inline-block"></span>
-          안전 지도 및 상황별 응급 대응 매뉴얼
+          안전 수칙 및 학교·비상 연락망
         </h2>
-        <p class="text-sm text-slate-500 mt-1">안전하고 즐거운 테마학습여행을 위한 필수 안전 수칙 및 비상 대처 요령입니다.</p>
+        <p class="text-sm text-slate-500 mt-1">응급 상황 시 신속한 대처와 학교 직통 연락을 위한 비상 종합 안내입니다.</p>
       </div>
 
+      <!-- School & Emergency Quick Dial Cards -->
+      <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-700">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-700 mb-6">
+          <div>
+            <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Direct Hotline</span>
+            <h3 class="text-xl sm:text-2xl font-black mt-1 flex items-center gap-2">
+              <i class="fa-solid fa-phone-volume text-rose-400"></i> 학교 및 긴급 비상 연락망
+            </h3>
+          </div>
+          <span class="text-xs bg-rose-500/20 text-rose-300 px-3 py-1 rounded-full border border-rose-500/30">터치 시 바로 통화 연결</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- School Main -->
+          <a href="tel:033-763-8632" class="bg-white/10 hover:bg-white/20 p-4 rounded-2xl border border-white/10 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sky-300 mb-1">
+                <span>육민관중학교</span>
+                <i class="fa-solid fa-arrow-up-right-from-square opacity-60 group-hover:opacity-100"></i>
+              </div>
+              <div class="text-base font-bold">교무실 (대표번호)</div>
+            </div>
+            <div class="text-lg sm:text-xl font-extrabold text-white mt-3 flex items-center gap-2">
+              <i class="fa-solid fa-phone text-emerald-400 text-sm"></i> 033-763-8632
+            </div>
+          </a>
+
+          <!-- School Admin -->
+          <a href="tel:033-763-8631" class="bg-white/10 hover:bg-white/20 p-4 rounded-2xl border border-white/10 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sky-300 mb-1">
+                <span>육민관중학교</span>
+                <i class="fa-solid fa-arrow-up-right-from-square opacity-60 group-hover:opacity-100"></i>
+              </div>
+              <div class="text-base font-bold">행정실</div>
+            </div>
+            <div class="text-lg sm:text-xl font-extrabold text-white mt-3 flex items-center gap-2">
+              <i class="fa-solid fa-phone text-emerald-400 text-sm"></i> 033-763-8631
+            </div>
+          </a>
+
+          <!-- Maritime Police -->
+          <a href="tel:122" class="bg-white/10 hover:bg-white/20 p-4 rounded-2xl border border-white/10 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sky-300 mb-1">
+                <span>요트·해양 안전</span>
+                <i class="fa-solid fa-arrow-up-right-from-square opacity-60 group-hover:opacity-100"></i>
+              </div>
+              <div class="text-base font-bold">해양긴급신고</div>
+            </div>
+            <div class="text-xl sm:text-2xl font-black text-sky-400 mt-3 flex items-center gap-2">
+              <i class="fa-solid fa-life-ring text-sky-400 text-sm"></i> 국번없이 122
+            </div>
+          </a>
+
+          <!-- 119 Fire & Rescue -->
+          <a href="tel:119" class="bg-white/10 hover:bg-white/20 p-4 rounded-2xl border border-white/10 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs text-rose-300 mb-1">
+                <span>화재·응급구조</span>
+                <i class="fa-solid fa-arrow-up-right-from-square opacity-60 group-hover:opacity-100"></i>
+              </div>
+              <div class="text-base font-bold">119 종합상황실</div>
+            </div>
+            <div class="text-xl sm:text-2xl font-black text-rose-400 mt-3 flex items-center gap-2">
+              <i class="fa-solid fa-truck-medical text-rose-400 text-sm"></i> 국번없이 119
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Safety Rules Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
           <div class="flex items-center gap-3 text-brand-700 font-bold text-lg">
@@ -284,21 +364,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Emergency Contacts Banner -->
-      <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h4 class="font-bold text-base flex items-center gap-2">
-            <i class="fa-solid fa-phone-volume text-rose-400"></i> 비상 긴급 연락망
-          </h4>
-          <p class="text-xs text-slate-300 mt-1">응급 상황 발생 시 인솔교사 또는 상황실로 즉시 연락하세요.</p>
-        </div>
-        <div class="flex gap-4 text-xs font-semibold">
-          <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">해양긴급: <span class="text-sky-400">122</span></div>
-          <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">응급구조/소방: <span class="text-rose-400">119</span></div>
-          <div class="bg-slate-800 px-4 py-2 rounded-xl border border-slate-700">경찰: <span class="text-amber-400">112</span></div>
-        </div>
-      </div>
     </section>
 
   </main>
@@ -314,15 +379,19 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-12">
-    <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center gap-4">
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-between items-center gap-6">
       <div>
-        <p class="font-bold text-slate-200">육민관중학교 2학년 테마학습여행 지원단</p>
-        <p class="mt-0.5">강원특별자치도 원주시 판부면 | 2026. 9. 2. ~ 9. 4. 부산광역시</p>
+        <p class="font-bold text-slate-200 text-sm">육민관중학교 2학년 테마학습여행 지원단</p>
+        <p class="mt-1">강원특별자치도 원주시 판부면 매봉길 26 | 2026. 9. 2. ~ 9. 4. 부산광역시 일원</p>
+        <p class="mt-1 text-slate-300">
+          <i class="fa-solid fa-phone text-emerald-400 mr-1"></i> 교무실: <a href="tel:033-763-8632" class="hover:underline text-white font-semibold">033-763-8632</a> | 
+          행정실: <a href="tel:033-763-8631" class="hover:underline text-white font-semibold">033-763-8631</a>
+        </p>
       </div>
-      <div class="text-right">
+      <div class="text-left sm:text-right">
         <p>인솔 책임: 2학년부 (인솔교사 5명, 학생 82명)</p>
-        <p class="text-slate-500 mt-0.5">안전하고 유익한 배움이 있는 여행</p>
+        <p class="text-slate-500 mt-1">안전하고 배움이 가득한 행복한 테마여행</p>
       </div>
     </div>
   </footer>
